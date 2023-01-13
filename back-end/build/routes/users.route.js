@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+exports.router = void 0;
+var express_1 = require("express");
+var users_controller_1 = require("../controllers/users.controller");
+exports.router = (0, express_1.Router)();
+exports.router.post("/", users_controller_1.create);
+exports.router.get("/", users_controller_1.getAll);
+exports.router.get("/:id", users_controller_1.getById);
+exports.router.put("/:id", users_controller_1.updateById);
+exports.router["delete"]("/:id", users_controller_1.deleteById);
+exports.router.post("/auth", users_controller_1.auth);
+exports.router.post("/register", users_controller_1.register);
+exports["default"] = exports.router;
